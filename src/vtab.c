@@ -985,7 +985,8 @@ int sqlite3VtabSavepoint(sqlite3 *db, int op, int iSavepoint){
             xMethod = pMod->xRelease;
             break;
         }
-        if( xMethod && pVTab->iSavepoint>iSavepoint ){
+        assert( pVTab->iSavepoint > iSavepoint );
+        if( xMethod ){
           rc = xMethod(pVTab->pVtab, iSavepoint);
         }
       }
