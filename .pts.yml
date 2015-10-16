@@ -1,0 +1,8 @@
+Upstream
+  # Which test profiles to run
+  tests:
+     - pts/sqlite
+     - local/benchmark
+  # Which local profiles to run
+  metadata:
+    - git
